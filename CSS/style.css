@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #f9fafc;
+}
+
+body {
+    width: min(820px, 100%);
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #f9fafc;
+    color: #334155;
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    align-items: stretch;
+    column-gap: 16px;
+    row-gap: 0;
+    padding: 0 20px 40px;
+}
+
+header,
+nav,
+footer {
+    grid-column: 1 / -1;
+}
+
+header,
+nav,
+main,
+article,
+section,
+aside,
+footer {
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.2px;
+}
+
+header {
+    background: #ede5fd;
+    border-color: #7b3ceb;
+    color: #7830e9;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    background: #e6f5f2;
+    border-color: #29b497;
+    color: #179388;
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+article {
+    background: #e9e2da;
+    border-color: #e25329;
+    color: #ef5402;
+    min-height: 168px;
+    padding: 16px 20px;
+}
+
+section {
+    background: #dbe2f4;
+    border-color: #8a61ee;
+    color: #6e22dc;
+    min-height: 188px;
+    padding: 16px 20px;
+}
+
+aside {
+    background: #deecf5;
+    border-color: #0d81ba;
+    color: #0069b1;
+    padding: 16px 12px;
+    text-align: center;
+}
+
+aside iframe,
+aside video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    background: #000;
+}
+
+footer {
+    background: #dfedee;
+    border-color: #198e85;
+    color: #007467;
+    height: 96px;
+    margin-top: 16px;
+    display: grid;
+    place-items: center;
+}
+
+@media (max-width: 700px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        align-content: start;
+    }
+
+    aside+aside {
+        margin-top: 16px;
+    }
+
+    header,
+    nav,
+    main,
+    article,
+    section,
+    aside,
+    footer {
+        font-size: 20px;
+    }
+
+    aside {
+        min-height: 180px;
+    }
+}
